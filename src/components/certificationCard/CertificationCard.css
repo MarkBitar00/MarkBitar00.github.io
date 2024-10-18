@@ -17,7 +17,7 @@
 }
 
 .logo_img {
-  margin: 3px;
+  margin: 20px;
   width: auto;
   height: 100px;
 }
@@ -47,7 +47,7 @@
 }
 
 .content .content-overlay {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   position: absolute;
   height: 99%;
   width: 100%;

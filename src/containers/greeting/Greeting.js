@@ -4,7 +4,7 @@ import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
 import { greeting } from "../../portfolio";
 import { Fade } from "react-reveal";
-import FeelingProud from "./FeelingProud";
+// import FeelingProud from "./FeelingProud";
 
 export default function Greeting(props) {
   const theme = props.theme;
@@ -29,15 +29,28 @@ export default function Greeting(props) {
                 {greeting.subTitle}
               </p>
               <SocialMedia theme={theme} />
-              <div className="portfolio-repo-btn-div">
-                <Button
-                  text="⭐ Star Me On Github"
-                  newTab={true}
-                  href={greeting.portfolio_repository}
-                  theme={theme}
-                  className="portfolio-repo-btn"
-                />
-              </div>
+              {greeting.resumeLink && (
+                <div className="portfolio-repo-btn-div">
+                  <Button
+                    text="📝 Mon CV"
+                    newTab={true}
+                    href={greeting.resumeLink}
+                    theme={theme}
+                    className="portfolio-repo-btn"
+                  />
+                </div>
+              )}
+              {greeting.portfolio_repository && (
+                <div className="portfolio-repo-btn-div">
+                  <Button
+                    text="⭐ Star Me On Github"
+                    newTab={true}
+                    href={greeting.portfolio_repository}
+                    theme={theme}
+                    className="portfolio-repo-btn"
+                  />
+                </div>
+              )}
               {/* <div className="button-greeting-div">
               <Button text="Contact me" href="#contact" />
               <Button text="See my resume" newTab={true} href={greeting.resumeLink} />
@@ -49,7 +62,8 @@ export default function Greeting(props) {
 							alt="saad sitting on table"
 							src={require("../../assets/images/feelingProud.svg")}
 						></img> */}
-            <FeelingProud theme={theme} />
+            {/* <FeelingProud theme={theme} /> */}
+            {/* <img alt="" src={require("../../assets/images/home-bg.png")}/> */}
           </div>
         </div>
       </div>

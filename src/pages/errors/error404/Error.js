@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "../../../components/header/Header";
-import Footer from "../../../components/footer/Footer";
+// import Footer from "../../../components/footer/Footer";
 import TopButton from "../../../components/topButton/TopButton";
 import { Fade } from "react-reveal";
 import "./Error.css";
@@ -14,12 +14,12 @@ export default class Error extends Component {
         <Header theme={this.props.theme} />
         <div className="error-class">
           <Fade bottom duration={2000} distance="40px">
-            <h1>Woops</h1>
+            <h1>Oops :(</h1>
             <h1 className="error-404">404</h1>
-            <p>The requested page is unavailable at the moment!</p>
+            <p>Cette page n'éxiste pas!</p>
             <Link
               className="main-button"
-              to="/home"
+              to="/"
               style={{
                 color: theme.body,
                 backgroundColor: theme.text,
@@ -27,11 +27,11 @@ export default class Error extends Component {
                 display: "inline-flex",
               }}
             >
-              Go Home
+              Revenir à l'acceuil
             </Link>
           </Fade>
         </div>
-        <Footer theme={this.props.theme} />
+        {/* <Footer theme={this.props.theme} /> */}
         <TopButton theme={this.props.theme} />
       </div>
     );

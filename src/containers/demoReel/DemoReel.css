@@ -1,0 +1,42 @@
+.reel-header {
+  font-size: 40px;
+  line-height: 1.1;
+  font-family: "Google Sans Regular";
+  text-align: center;
+}
+
+.reel-body-div {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.reel-body-div > iframe {
+  width: 60vw;
+  height: 33.75vw;
+  border: none;
+  border-radius: 5px;
+  margin: auto;
+}
+
+@media (max-width: 1380px) {
+  .reel-header {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reel-body-div {
+    flex-direction: column;
+  }
+
+  .reel-header {
+    font-size: 30px;
+  }
+
+  .reel-body-div > iframe {
+    width: 80vw;
+    height: 45vw;
+  }
+}

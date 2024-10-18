@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import "./Skills.css";
 import SoftwareSkill from "../../components/softwareSkills/SoftwareSkill";
+import Button from "../../components/button/Button";
 import { skills } from "../../portfolio";
 import { Fade } from "react-reveal";
-import DataScienceImg from "./DataScienceImg";
-import FullStackImg from "./FullStackImg";
-import CloudInfraImg from "./CloudInfraImg";
-import DesignImg from "./DesignImg";
+// import DataScienceImg from "./DataScienceImg";
+// import FullStackImg from "./FullStackImg";
+// import CloudInfraImg from "./CloudInfraImg";
+// import DesignImg from "./DesignImg";
 
-function GetSkillSvg(props) {
-  if (props.fileName === "DataScienceImg")
-    return <DataScienceImg theme={props.theme} />;
-  else if (props.fileName === "FullStackImg")
-    return <FullStackImg theme={props.theme} />;
-  else if (props.fileName === "CloudInfraImg")
-    return <CloudInfraImg theme={props.theme} />;
-  return <DesignImg theme={props.theme} />;
-}
+// function GetSkillSvg(props) {
+//   if (props.fileName === "DataScienceImg")
+//     return <DataScienceImg theme={props.theme} />;
+//   else if (props.fileName === "FullStackImg")
+//     return <FullStackImg theme={props.theme} />;
+//   else if (props.fileName === "CloudInfraImg")
+//     return <CloudInfraImg theme={props.theme} />;
+//   return <DesignImg theme={props.theme} />;
+// }
 
 class SkillSection extends Component {
   render() {
@@ -32,7 +33,18 @@ class SkillSection extends Component {
                     alt="Ashutosh is Analysing Data"
                     src={require(`../../assets/images/${skill.imagePath}`)}
                   ></img> */}
-                  <GetSkillSvg fileName={skill.fileName} theme={theme} />
+                  {/* <GetSkillSvg fileName={skill.fileName} theme={theme} /> */}
+                  {skill.assetSources.map((asset, i) => {
+                    return (
+                      <div key={i}>
+                        <img
+                          className="project-asset-img"
+                          alt={asset}
+                          src={require(`../../assets/projects/${asset}`)}
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </Fade>
 
@@ -41,6 +53,12 @@ class SkillSection extends Component {
                   <h1 className="skills-heading" style={{ color: theme.text }}>
                     {skill.title}
                   </h1>
+                  <h3
+                    className="skills-subheading"
+                    style={{ color: theme.secondaryText }}
+                  >
+                    {skill.subtitle}
+                  </h3>
                 </Fade>
                 <Fade right duration={1500}>
                   <SoftwareSkill logos={skill.softwareSkills} />
@@ -58,6 +76,16 @@ class SkillSection extends Component {
                         </p>
                       );
                     })}
+                  </div>
+                </Fade>
+                <Fade right duration={1500}>
+                  <div className="project-build-btn">
+                    <Button
+                      text="🎮 Télécharger build"
+                      newTab={true}
+                      href={skill.buildLink}
+                      theme={theme}
+                    />
                   </div>
                 </Fade>
               </div>

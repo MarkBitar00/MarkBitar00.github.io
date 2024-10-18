@@ -1,5 +1,6 @@
 .error-main {
   width: 100vw;
+  min-height: calc(100vh - 190px);
 }
 
 .error-main > .error-class {

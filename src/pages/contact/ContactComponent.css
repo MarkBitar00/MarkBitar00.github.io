@@ -5,10 +5,12 @@
 .basic-contact {
   margin-left: 5%;
   margin-right: 5%;
+  min-height: calc(100vh - 190px);
 }
 
 .contact-heading-div {
   display: flex;
+  gap: 30px;
 }
 
 .blog-heading-div {
@@ -36,6 +38,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.contact-heading-img-div > img {
+  width: 360px;
+  height: 360px;
 }
 
 .blog-heading-img-div {
@@ -133,6 +140,11 @@
     margin-top: 60px;
   }
 
+  .contact-heading-img-div > img {
+    width: 320px;
+    height: 320px;
+  }
+
   .blog-heading-text {
     font-size: 50px;
     margin-top: 40px;
@@ -174,6 +186,11 @@
 
   .contact-heading-div {
     flex-direction: column;
+  }
+
+  .contact-heading-img-div > img {
+    width: 280px;
+    height: 280px;
   }
 
   .contact-header-detail-text {
